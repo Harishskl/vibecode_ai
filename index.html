@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ai Detector</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              slate: {
+                850: '#151f32',
+                900: '#0f172a',
+                950: '#020617',
+              },
+              neon: {
+                blue: '#00f3ff',
+                green: '#00ff9d',
+                red: '#ff0055',
+                yellow: '#ffe600'
+              }
+            },
+            fontFamily: {
+              mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace'],
+              sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #020617;
+        color: #e2e8f0;
+      }
+      .scan-line {
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background: rgba(0, 243, 255, 0.5);
+        box-shadow: 0 0 10px rgba(0, 243, 255, 0.8);
+        animation: scan 2s linear infinite;
+        z-index: 10;
+        pointer-events: none;
+      }
+      @keyframes scan {
+        0% { top: 0%; opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { top: 100%; opacity: 0; }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "recharts": "https://esm.sh/recharts@^3.6.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
